@@ -76,6 +76,17 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       appBar: AppBar(
         title: const Text('Crowd'),
         backgroundColor: Color(0xff095256),
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: Image.asset('assets/logo.png'),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
+          },
+        ),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -88,21 +99,25 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             backgroundColor: Color(0xff095256),
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Search',
-              backgroundColor: Color(0xff095256)),
+            icon: Icon(Icons.search),
+            label: 'Search',
+            backgroundColor: Color(0xff095256),
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.add_circle_outline_outlined),
-              label: 'Upload',
-              backgroundColor: Color(0xff095256)),
+            icon: Icon(Icons.add_circle_outline_outlined),
+            label: 'Upload',
+            backgroundColor: Color(0xff095256),
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.bookmark),
-              label: 'Bookmarks',
-              backgroundColor: Color(0xff095256)),
+            icon: Icon(Icons.bookmark),
+            label: 'Bookmarks',
+            backgroundColor: Color(0xff095256),
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.menu),
-              label: 'Menu',
-              backgroundColor: Color(0xff095256)),
+            icon: Icon(Icons.menu),
+            label: 'Menu',
+            backgroundColor: Color(0xff095256),
+          ),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Color(0xffbb9f06),
