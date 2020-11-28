@@ -6,12 +6,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My App',
+      title: 'Crowd',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text('My App')),
+        appBar: AppBar(title: Text('Crowd')),
         body: BodyWidget(),
       ),
     );
