@@ -38,18 +38,26 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+      TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
-      'Index 0: Home',
+      'Home',
       style: optionStyle,
     ),
     Text(
-      'Index 1: Business',
+      'Search',
       style: optionStyle,
     ),
     Text(
-      'Index 2: School',
+      'Upload',
+      style: optionStyle,
+    ),
+    Text(
+      'Bookmarks',
+      style: optionStyle,
+    ),
+    Text(
+      'Menu',
       style: optionStyle,
     ),
   ];
@@ -64,7 +72,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
+        title: const Text('Crowd'),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -76,12 +84,20 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(Icons.search),
+            label: 'Search',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.add_circle_outline_outlined),
+            label: 'Upload',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.bookmark),
+            label: 'Bookmarks',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu),
+            label: 'Menu',
           ),
         ],
         currentIndex: _selectedIndex,
