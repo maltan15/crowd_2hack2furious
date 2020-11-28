@@ -37,8 +37,10 @@ class MyStatefulWidget extends StatefulWidget {
 /// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
+  static const TextStyle optionStyle = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+  );
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
       'Home',
@@ -73,6 +75,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Crowd'),
+        backgroundColor: Color(0xff095256),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -82,6 +85,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
+            backgroundColor: Color(0xff095256),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
@@ -101,7 +105,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Color(0xffbb9f06),
         onTap: _onItemTapped,
       ),
     );
